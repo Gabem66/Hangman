@@ -34,6 +34,11 @@ namespace WindowsFormsApp1
         
 
         Hang man = new Hang();
+        /// <summary>
+        /// controls what happens when you select the new word button
+        /// </summary>
+        /// <param name="sender">the button being pressed</param>
+        /// <param name="e">the event </param>
         private void NewClick(object sender, EventArgs e)
         {
             Textpromt textprompt = new Textpromt();
@@ -77,7 +82,9 @@ namespace WindowsFormsApp1
 
 
         }
-
+        /// <summary>
+        /// creates buttons for all the  letters
+        /// </summary>
         private void NewLetters()
         {
             uxLetters.Controls.Clear();
@@ -99,7 +106,11 @@ namespace WindowsFormsApp1
 
         }
 
-
+        /// <summary>
+        /// controls what happens when one of the buttons are pressed
+        /// </summary>
+        /// <param name="sender">the trigger for the event </param>
+        /// <param name="e">the event </param>
         public void ButtonClick(object sender, EventArgs e)
         {
             Button pressed = (Button)sender;
@@ -138,7 +149,10 @@ namespace WindowsFormsApp1
 
         }
 
-
+        /// <summary>
+        /// checks to see if the game is over either by losing or winning
+        /// </summary>
+        /// <param name="found"></param>
         private void GameCheck(bool found)
         {
             if (found == false)
@@ -183,5 +197,16 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void uxGiveUp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Game over");
+            int a = 0;
+            foreach (Label l in uxWord.Controls)
+            {
+                l.Text = _word[a].ToString();
+                a++;
+            }
+            uxLetters.Enabled = false;
+        }
     }
 }

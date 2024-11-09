@@ -33,6 +33,8 @@
             this.uxWord = new System.Windows.Forms.FlowLayoutPanel();
             this.uxLetters = new System.Windows.Forms.FlowLayoutPanel();
             this.uxTries = new System.Windows.Forms.Label();
+            this.uxGiveUp = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // uxNew
@@ -66,17 +68,38 @@
             // uxTries
             // 
             this.uxTries.AutoSize = true;
-            this.uxTries.Location = new System.Drawing.Point(340, 74);
+            this.uxTries.Location = new System.Drawing.Point(31, 97);
             this.uxTries.Name = "uxTries";
             this.uxTries.Size = new System.Drawing.Size(83, 20);
             this.uxTries.TabIndex = 3;
             this.uxTries.Text = "Tries Left: ";
+            // 
+            // uxGiveUp
+            // 
+            this.uxGiveUp.Location = new System.Drawing.Point(677, 12);
+            this.uxGiveUp.Name = "uxGiveUp";
+            this.uxGiveUp.Size = new System.Drawing.Size(85, 35);
+            this.uxGiveUp.TabIndex = 4;
+            this.uxGiveUp.Text = "Give Up";
+            this.uxGiveUp.UseVisualStyleBackColor = true;
+            this.uxGiveUp.Click += new System.EventHandler(this.uxGiveUp_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(307, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Hang man ";
             // 
             // Userinterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.uxGiveUp);
             this.Controls.Add(this.uxTries);
             this.Controls.Add(this.uxLetters);
             this.Controls.Add(this.uxWord);
@@ -95,6 +118,8 @@
         private System.Windows.Forms.FlowLayoutPanel uxWord;
         private System.Windows.Forms.FlowLayoutPanel uxLetters;
         private System.Windows.Forms.Label uxTries;
+        private System.Windows.Forms.Button uxGiveUp;
+        private System.Windows.Forms.Label label1;
     }
 }
 
