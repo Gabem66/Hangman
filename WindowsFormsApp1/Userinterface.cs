@@ -27,6 +27,12 @@ namespace WindowsFormsApp1
        
         private readonly Padding _pad = new Padding(5);
 
+        private int wrong =0;
+
+        public int tries = 6;
+
+        
+
         Hang man = new Hang();
         private void NewClick(object sender, EventArgs e)
         {
@@ -54,7 +60,8 @@ namespace WindowsFormsApp1
                 for (int i = 0; i < _word.Length; i++)
                 {
                     Label slot = new Label();
-                    slot.Text = _word[i].ToString();
+                    //slot.Text = _word[i].ToString();
+                    slot.Text = "_";
                     slot.BackColor = Color.Beige;
                     slot.Margin = new Padding(0);
                     slot.TextAlign = ContentAlignment.MiddleCenter;
@@ -64,7 +71,7 @@ namespace WindowsFormsApp1
                     slot.Height = uxWord.Height;
                     uxWord.Controls.Add(slot);
                 }
-
+                uxTries.Text = "Tries Left: " + tries;
 
             }
 
@@ -74,6 +81,7 @@ namespace WindowsFormsApp1
         private void NewLetters()
         {
             uxLetters.Controls.Clear();
+            uxLetters.Enabled = true;
             char let = 'a';
             while(let<= 'z')
             {
@@ -99,21 +107,79 @@ namespace WindowsFormsApp1
             {
                 
                 char letter = pressed.Text[0];
-                
+                bool found = false;
                 
                 for( int i = 0; i< _word.Length; i++)
                 {
-                    if (man.contains.TryGetValue(i, out char l)){
-                        for ( int j =0; j< _word.Length; j++)
+                    if (man.contains.TryGetValue(i, out char le))
+                    {
+                        int j = 0;
+                        foreach (Label l in uxWord.Controls)
                         {
-                            
-
+                            if (letter == le && j == i)
+                            {
+                                l.Text = letter.ToString();
+                                found = true;
+                            }
+                            j++;
                         }
                     }
                 }
 
+                GameCheck(found);
 
 
+                pressed.Enabled = false;
+
+            }
+
+
+
+
+        }
+
+
+        private void GameCheck(bool found)
+        {
+            if (found == false)
+            {
+                MessageBox.Show("letter not found");
+                tries--;
+                uxTries.Text = "Tries Left: " + tries;
+
+
+                if (tries < 1)
+                {
+                    MessageBox.Show("Game over");
+                    int a = 0;
+                    foreach (Label l in uxWord.Controls)
+                    {
+                        l.Text = _word[a].ToString();
+                        a++;
+                    }
+                    uxLetters.Enabled = false;
+                }
+            }
+            else
+            {
+                int a = 0;
+                int i = 0;
+                foreach (Label l in uxWord.Controls)
+                {
+                    char let = l.Text[0];
+                    if(let == _word[i])
+                    {
+                        a++;
+                    }
+                    i++;
+                }
+
+                if (a == _word.Length)
+                {
+                    
+                    MessageBox.Show("You Won!");
+                    uxLetters.Enabled = false;
+                }
             }
         }
 

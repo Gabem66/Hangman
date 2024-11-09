@@ -32,6 +32,7 @@
             this.uxOpenDialog = new System.Windows.Forms.OpenFileDialog();
             this.uxWord = new System.Windows.Forms.FlowLayoutPanel();
             this.uxLetters = new System.Windows.Forms.FlowLayoutPanel();
+            this.uxTries = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // uxNew
@@ -62,17 +63,28 @@
             this.uxLetters.Size = new System.Drawing.Size(727, 217);
             this.uxLetters.TabIndex = 2;
             // 
+            // uxTries
+            // 
+            this.uxTries.AutoSize = true;
+            this.uxTries.Location = new System.Drawing.Point(340, 74);
+            this.uxTries.Name = "uxTries";
+            this.uxTries.Size = new System.Drawing.Size(83, 20);
+            this.uxTries.TabIndex = 3;
+            this.uxTries.Text = "Tries Left: ";
+            // 
             // Userinterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.uxTries);
             this.Controls.Add(this.uxLetters);
             this.Controls.Add(this.uxWord);
             this.Controls.Add(this.uxNew);
             this.Name = "Userinterface";
             this.Text = "UserInterface";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -82,6 +94,7 @@
         private System.Windows.Forms.OpenFileDialog uxOpenDialog;
         private System.Windows.Forms.FlowLayoutPanel uxWord;
         private System.Windows.Forms.FlowLayoutPanel uxLetters;
+        private System.Windows.Forms.Label uxTries;
     }
 }
 
