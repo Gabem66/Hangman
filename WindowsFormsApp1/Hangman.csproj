@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Textpromt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Textpromt.Designer.cs">
+      <DependentUpon>Textpromt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hang.cs" />
     <Compile Include="Userinterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +70,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Textpromt.resx">
+      <DependentUpon>Textpromt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Userinterface.resx">
+      <DependentUpon>Userinterface.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

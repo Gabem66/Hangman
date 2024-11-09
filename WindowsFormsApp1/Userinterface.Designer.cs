@@ -28,13 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.uxNew = new System.Windows.Forms.Button();
+            this.uxOpenDialog = new System.Windows.Forms.OpenFileDialog();
+            this.uxWord = new System.Windows.Forms.FlowLayoutPanel();
+            this.uxLetters = new System.Windows.Forms.FlowLayoutPanel();
+            this.SuspendLayout();
+            // 
+            // uxNew
+            // 
+            this.uxNew.Location = new System.Drawing.Point(12, 12);
+            this.uxNew.Name = "uxNew";
+            this.uxNew.Size = new System.Drawing.Size(94, 36);
+            this.uxNew.TabIndex = 0;
+            this.uxNew.Text = "New Word";
+            this.uxNew.UseVisualStyleBackColor = true;
+            this.uxNew.Click += new System.EventHandler(this.NewClick);
+            // 
+            // uxOpenDialog
+            // 
+            this.uxOpenDialog.FileName = "openFileDialog1";
+            // 
+            // uxWord
+            // 
+            this.uxWord.Location = new System.Drawing.Point(35, 160);
+            this.uxWord.Name = "uxWord";
+            this.uxWord.Size = new System.Drawing.Size(727, 55);
+            this.uxWord.TabIndex = 1;
+            // 
+            // uxLetters
+            // 
+            this.uxLetters.Location = new System.Drawing.Point(35, 221);
+            this.uxLetters.Name = "uxLetters";
+            this.uxLetters.Size = new System.Drawing.Size(727, 217);
+            this.uxLetters.TabIndex = 2;
+            // 
+            // Userinterface
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Controls.Add(this.uxLetters);
+            this.Controls.Add(this.uxWord);
+            this.Controls.Add(this.uxNew);
+            this.Name = "Userinterface";
+            this.Text = "UserInterface";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button uxNew;
+        private System.Windows.Forms.OpenFileDialog uxOpenDialog;
+        private System.Windows.Forms.FlowLayoutPanel uxWord;
+        private System.Windows.Forms.FlowLayoutPanel uxLetters;
     }
 }
 
