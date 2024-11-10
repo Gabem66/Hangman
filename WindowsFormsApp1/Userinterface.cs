@@ -82,6 +82,7 @@ namespace WindowsFormsApp1
                     slot.Height = uxWord.Height;
                     uxWord.Controls.Add(slot);
                 }
+                tries = 6;
                 uxTries.Text = "Tries Left: " + tries;
 
             }
