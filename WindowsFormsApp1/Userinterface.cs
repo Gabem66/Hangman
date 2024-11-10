@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+   Author: Gabe Martinez
+    Quinlan Seeberger
+
+*/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

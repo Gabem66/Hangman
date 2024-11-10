@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * Authors: Gabe Martinez 
+ *  Quinlan Seeberger
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
