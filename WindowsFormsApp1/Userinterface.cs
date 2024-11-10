@@ -212,6 +212,8 @@ namespace WindowsFormsApp1
                 l.Text = _word[a].ToString();
                 a++;
             }
+            tries = 0;
+            uxTries.Text = "Tries Left: " + tries;
             uxLetters.Enabled = false;
         }
     }
